@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  StockAPI.api:
+    container_name: stockApi
+    image: ${DOCKER_REGISTRY-}stockApi
+    build:
+      context: .
+      dockerfile: src/Presentation/StockAPI.Api/Dockerfile
+
+  s_sqlserver:
+    container_name: stockApi_sqlserver
+    image: mcr.microsoft.com/mssql/server:2019-latest
